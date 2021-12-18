@@ -1,10 +1,11 @@
 const express=require("express");
+const authordata = require("../model/authordata");
 const authorRouter=express.Router();
 
 function router(nav){
 
 
-
+/* 
 
 var authors =[
     {
@@ -28,21 +29,24 @@ var authors =[
     img:'v m basheer.jpg'
 
 },
-]
+] */
 
 authorRouter.get('/', function(req,res){ 
-    
+    authordata.find()
+    .then(function (authors){
     res.render( "authors", {nav,
 title:"Library", 
 authors })
-});
+});});
 authorRouter.get('/:i', function(req,res){ 
-    const i = req.params.i
+    const i = req.params.i;
+    authordata.findOne({_id:i})
+    .then(function(author){
     
     res.render( "author", {nav,
 title:"library",
-author:authors[i] })
-});
+author })
+});});
 return authorRouter
 };
 

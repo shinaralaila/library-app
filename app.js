@@ -15,12 +15,34 @@ const nav=[
         link:"/admin",
 
         name:"Add Book"
+    },
+    {
+        link:"/Admins",
+
+        name:"Add Authors"
+    },
+    {   link:"/register",
+
+        name:"Sign Up"
+
+    },
+    {
+        link:"/login",
+
+        name:"Login"
     }
 ];
 const booksRouter=require("./src/routes/booksRouter")(nav);
 const authorRouter=require("./src/routes/authorRouter")(nav);
 const adminRouter=require("./src/routes/adminRouter")(nav);
+const userRouter=require("./src/routes/userRouter")(nav);
+const AdminsRouter=require("./src/routes/AdminsRouter")(nav);
+const loginRouter=require("./src/routes/loginRouter")(nav);
+
 const app = new express();
+const appRouter = express.Router();
+
+app.use(express.urlencoded({extended:true }));
 app.use(express.static('./public'));
 //app.use(express.static('./src/views'));
 const path = require('path');
@@ -34,11 +56,18 @@ app.set("views",__dirname+"/src/views");
 app.use('/books',booksRouter);
 app.use('/authors',authorRouter);
 app.use('/admin',adminRouter);
+app.use('/register',userRouter);
+app.use("/Admins",AdminsRouter);
+app.use("/login",loginRouter);
+
     app.get('/', function(req,res){
         res.render( "index",
         { nav,
     title:"library"});
     });
-    
 
-    app.listen(5000);
+
+  
+
+    
+app.listen(5005);
