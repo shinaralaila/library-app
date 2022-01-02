@@ -26,7 +26,7 @@ function router(nav) {
         }
         var author = authordata(item);
         author.save();
-        res.redirect('/authors');
+        res.redirect('/authorsadmin');
 
     });
     return AdminsRouter

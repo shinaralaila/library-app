@@ -25,7 +25,7 @@ function router(nav){
         }
         var book=Bookdata(item);
         book.save();
-        res.redirect('/books');
+        res.redirect('/booksadmin');
             
     });
     return adminRouter
