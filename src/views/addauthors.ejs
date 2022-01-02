@@ -33,7 +33,7 @@
         </li>
        <%}%>
       </ul>
-      <ul class="nav navbar-right navbar-nav">
+      <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
           <ul class="dropdown-menu" style="padding:12px;">
@@ -42,7 +42,7 @@
             </form>
           </ul>
         </li>
-      </ul>
+      </ul> -->
     </nav>
   </div>
 </header>
@@ -90,28 +90,77 @@
           
           
           <!--/stories-->
-          
-          <div class="row">    
-          <form method="post" action="/Admins/add">
+          <div class="container" style="margin-left: 35%;">
+          <div class="row" >  
+            
+          <form method="post" action="/Admins/add" onsubmit="return validate()" enctype="multipart/form-data" >
               
-            Name:<input type="text" name="title"><br>
-            <br>
-            genre:<input type="text" name="genre"><br>
-            <br>
-            Image:<input type="file" name="image"><br>
-            <br>
+            Name:<input type="text" name="title" id="Name"><br>
+            <label for="error" id="error0"></label><br>
+            genre:<input type="text" name="genre" id="genre"><br>
+            <label for="error" id="error1"></label><br>
+            Image:<input type="file" name="image" id="image" required><br>
+            <label for="error" id="error2"></label><br>
             <button type="submit">Add</button>
 
           </form>
           </div>
+        </div>
         
           <hr>
           
           <!--/stories-->
-          
+          <script>
+            function validate() {
+              let errorflag = 0;
+              error0.innerHTML = "";
+              error1.innerHTML = "";
+              error2.innerHTML = "";
+              let error = document.getElementById("error");
+              //let title = document.getElementById("title");
+              let name = document.getElementById("Name");
+              let gen = document.getElementById("genre");
+              let img = document.getElementById("image");
+              let regex = /^[a-zA-Z0-9\-\s]+$/;
+
+              if (name.value == "") {
+                error0.innerHTML = "Field cannot be empty";
+                errorflag = 1;
+              }
+              if (gen.value == "") {
+                error1.innerHTML = "Field cannot be empty";
+                errorflag = 1;
+              }
+              
+              
+              if (errorflag == 0) {
+                if (regex.test(name.value) == false) {
+                  error0.innerHTML = "Wrong characters used";
+                  errorflag = 1;
+                }
+                if (regex.test(gen.value) == false) {
+                  error1.innerHTML = "Wrong characters used";
+                  errorflag = 1;
+                }
+                
+              }
+              //  if(input.type==file){
+              //   error0.innerhtml="Image uploaded successfully";
+              //   errorflag=1;
+
+              // };
+              if (errorflag == 1) {
+                return false;
+              }
+              else {
+                return true;
+              }
+            }
+          </script>
+<!-- 
           
           <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
-        
+         -->
           
         </div>
       </div>
@@ -125,7 +174,7 @@
                                                                                 
 <hr>
 
-<div class="container" id="footer">
+<!-- <div class="container" id="footer">
   <div class="row">
     <div class="col col-sm-12">
       
@@ -143,10 +192,10 @@
 <hr>
 
 <hr>
-
-<footer>
+ -->
+ <footer>
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-sm-6">
         <ul class="list-inline">
           <li><i class="icon-facebook icon-2x"></i></li>
@@ -159,7 +208,7 @@
       <div class="col-sm-6">
           <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
       </div>
-    </div>
+    </div> -->
   </div>
 </footer>
 	<!-- script references -->

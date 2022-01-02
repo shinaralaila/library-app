@@ -39,7 +39,7 @@
             </li>
             <%}%>
         </ul>
-        <ul class="nav navbar-right navbar-nav">
+        <!-- <ul class="nav navbar-right navbar-nav">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
             <ul class="dropdown-menu" style="padding:12px;">
@@ -50,7 +50,7 @@
               </form>
             </ul>
           </li>
-        </ul>
+        </ul> -->
       </nav>
     </div>
   </header>
@@ -98,27 +98,28 @@
 
 
             <!--/stories-->
-
+            <div class="container" style="margin-left: 35%;">
             <div class="rowone">
-              <form method="post" action="/admin/add" onsubmit="return validate()">
+              
+              <form method="post" action="/admin/add" onsubmit="return validate()" enctype="multipart/form-data">
 
-                Title:<input type="text" name="title" id="title">
+                Title :   <input type="text" name="title" id="title">
                 <label for="error" id="error0"></label><br>
                 <br>
                 Author:<input type="text" name="author" id="author">
                 <label for="error" id="error1"></label><br>
                 <br>
-                genre:<input type="text" name="genre" id="genre">
+                genre: <input type="text" name="genre" id="genre">
                 <label for="error" id="error2"></label><br>
                 <br>
-                Image:<input type="file" name="image" id="image" accept=".jpg,.jpeg,.png">
+                Image:<input type="file" name="image" id="image" accept=".jpg,.jpeg,.png" required>
                 <label for="error" id="error3"></label><br>
                 <br>
                 <button type="submit">Add</button>
 
               </form>
             </div>
-
+          </div>
             <hr>
 
             <!--/stories-->
@@ -148,7 +149,7 @@
                   error2.innerHTML = "Field cannot be empty";
                   errorflag = 1;
                 }
-                
+
                 if (errorflag == 0) {
                   if (regex.test(title.value) == false) {
                     error0.innerHTML = "Wrong characters used";
@@ -177,9 +178,9 @@
               }
             </script>
 
-
+<!-- 
             <a href="/" class="btn btn-primary pull-right btnNext">More <i
-                class="glyphicon glyphicon-chevron-right"></i></a>
+                class="glyphicon glyphicon-chevron-right"></i></a> -->
 
 
           </div>
@@ -195,47 +196,45 @@
 
   <hr>
 
-  <div class="container" id="footer">
-    <div class="row">
-      <div class="col col-sm-12">
-
-        <h1>Follow Us</h1>
-        <div class="btn-group">
-          <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
-          <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
-          <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
-        </div>
-
+<!-- <div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
       </div>
+      
     </div>
   </div>
+</div>
 
-  <hr>
+<hr>
 
-  <hr>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <ul class="list-inline">
-            <li><i class="icon-facebook icon-2x"></i></li>
-            <li><i class="icon-twitter icon-2x"></i></li>
-            <li><i class="icon-google-plus icon-2x"></i></li>
-            <li><i class="icon-pinterest icon-2x"></i></li>
-          </ul>
-
-        </div>
-        <div class="col-sm-6">
-          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a
-              href="http://www.bootply.com">Bootply</a></p>
-        </div>
+<hr>
+ -->
+ <footer>
+  <div class="container">
+    <!-- <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
       </div>
-    </div>
-  </footer>
-  <!-- script references -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-</body>
-
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div> -->
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
 </html>

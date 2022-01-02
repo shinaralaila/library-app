@@ -6,12 +6,12 @@
 		<title><%=title%></title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -27,13 +27,13 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-          <%for(i=0;i<nav.length;i++){%>
+          <%for(i=0;i<navhome.length;i++){%>
         <li>
-          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+          <a href="<%=navhome[i].link%>"><%=navhome[i].name%></a>
         </li>
        <%}%>
       </ul>
-      <ul class="nav navbar-right navbar-nav">
+      <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
           <ul class="dropdown-menu" style="padding:12px;">
@@ -42,7 +42,7 @@
             </form>
           </ul>
         </li>
-      </ul>
+      </ul> -->
     </nav>
   </div>
 </header>
@@ -90,11 +90,12 @@
           
           
           <!--/stories-->
+         
           <form method="post" action="/login/new" onsubmit="return validate()">
            
             <label>
               <p class="label-txt">ENTER YOUR EMAIL</p>
-              <input type="email" class="input"id="email" placeholder="email">
+              <input type="email" class="input" name="email" id="email" placeholder="email">
               <label for="error" id="error1"></label>
 
               <div class="line-box">
@@ -103,7 +104,7 @@
             </label>
             <label>
               <p class="label-txt">ENTER YOUR PASSWORD</p>
-              <input type="password" class="input" id="pwd" placeholder="password">
+              <input type="password" class="input" name="pwd" id="pwd" placeholder="password">
               <label for="error" id="error2"></label>
 
               <div class="line-box">
@@ -111,8 +112,10 @@
               </div>
             </label>
             
-            <button type="submit">SignIn</button>
+            <button type="submit">Login</button>
           </form>
+          <hr>
+          
           <!--/stories-->
           <!--validation-->
           <script>
@@ -157,7 +160,7 @@ function validate(){
           </script>
           
           
-          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+          <!-- <a href="/register" class="btn btn-primary pull-right btnNext">Sign Up </a>  -->
         
           
         </div>
@@ -172,7 +175,7 @@ function validate(){
                                                                                 
 <hr>
 
-<div class="container" id="footer">
+<!-- <div class="container" id="footer">
   <div class="row">
     <div class="col col-sm-12">
       
@@ -190,10 +193,10 @@ function validate(){
 <hr>
 
 <hr>
-
-<footer>
+ -->
+ <footer>
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-sm-6">
         <ul class="list-inline">
           <li><i class="icon-facebook icon-2x"></i></li>
@@ -206,7 +209,7 @@ function validate(){
       <div class="col-sm-6">
           <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
       </div>
-    </div>
+    </div> -->
   </div>
 </footer>
 	<!-- script references -->
